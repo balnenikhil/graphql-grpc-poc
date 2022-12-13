@@ -1,0 +1,20 @@
+grpc:
+  server:
+    port: 9000
+
+spring:
+  application:
+    name: NETFLIX
+  datasource:
+    url: ${DATASOURCE_URL:jdbc:mysql://sql6.freesqldatabase.com:3306/sql6584158?useSSL=false&serverTimezone=UTC}
+    username: ${DB_USERNAME:sql6584158}
+    password: ${DB_PASSWORD:jYjTNHm7E3}
+    hikari:
+      maximum-pool-size: 10
+  jpa:
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
