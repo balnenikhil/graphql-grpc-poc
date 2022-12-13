@@ -6,7 +6,7 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
-  build:
+  server-build:
     name: gRPC Server Build
     runs-on: ubuntu-latest
     defaults:
@@ -28,7 +28,7 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
       - name: Build and analyze Tests
         run: mvn clean test
-  build:
+  beffe-build:
     name: graphQL beffe Build
     runs-on: ubuntu-latest
     defaults:
