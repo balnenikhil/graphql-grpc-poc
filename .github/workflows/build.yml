@@ -28,3 +28,17 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
       - name: Build and analyze Tests
         run: mvn clean test
+  build:
+    name: graphQL beffe Build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./beffe
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis
+      - name: Install Dependencies
+        run: npm install --legacy-peer-deps
+      - name: Test and coverage
+        run: npm test
