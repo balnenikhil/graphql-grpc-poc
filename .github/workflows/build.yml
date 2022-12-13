@@ -1,7 +1,4 @@
 name: Build
-defaults:
-  run:
-    working-directory: ./movieflix-server
 on:
   push:
     branches:
@@ -12,6 +9,9 @@ jobs:
   build:
     name: gRPC Server Build
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./movieflix-server
     steps:
       - uses: actions/checkout@v2
         with:
